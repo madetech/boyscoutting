@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: boyscoutting_development
+  host: db
+  username: root
+  password: root
+
+test:
+  <<: *default
+  adapter: sqlite3
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: team_production
