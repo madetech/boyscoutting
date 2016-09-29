@@ -12,7 +12,7 @@ class PrEventsController < ApplicationController
         ]
       )
       comment_kudos = GitHub::CommentKudos.new(comments)
-      comments_with_kudos = comment_kudos.comments_with_kudos(kudos_character: '[BS]', author: pr_service.author)
+      comments_with_kudos = comment_kudos.comments_with_kudos(kudos_character: '🔥 ', author: pr_service.author)
       if comments_with_kudos.present?
         Merit.create!(username: pr_service.author,
                       description: pr_service.title)
