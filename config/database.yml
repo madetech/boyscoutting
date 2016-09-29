@@ -7,7 +7,7 @@ default: &default
 development:
   <<: *default
   database: boyscoutting_development
-  host: db
+  host: localhost
   username: root
   password: root
 
