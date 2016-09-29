@@ -5,12 +5,7 @@ class PrEventsController < ApplicationController
     pr_service = GitHub::PullRequestAction.new(params)
 
     if pr_service.is_pr? && pr_service.state == 'closed'
-      comments = GitHub::PullRequestComments.new.fetch(
-        [
-          pr_service.comments_url,
-          pr_service.review_comments_url
-        ]
-      )
+      comments = GitHub::PullRequestComments.new.fetch([pr_service.comments_url, pr_service.review_comments_url])
       comment_kudos = GitHub::CommentKudos.new(comments)
       comments_with_kudos = comment_kudos.comments_with_kudos(kudos_character: '🔥 ', author: pr_service.author)
       if comments_with_kudos.present?
