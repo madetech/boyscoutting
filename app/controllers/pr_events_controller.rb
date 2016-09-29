@@ -17,5 +17,8 @@ class PrEventsController < ApplicationController
 
   def index
     @users = Merit.group(:username).count
+    @kit = IMGKit.new(render_to_string action: 'index', layout: false)
+
+    send_data(@kit.to_jpg, type: 'image/jpeg', disposition: 'inline')
   end
 end
