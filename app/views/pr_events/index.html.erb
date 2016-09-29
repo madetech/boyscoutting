@@ -1,13 +1,39 @@
+<style>
+  table {
+   border-spacing: 0px 2px;
+  }
+  .user:first-child .points {
+    background: #4CC61E;
+    color: white;
+  }
+
+  .user .points {
+    border-radius: 0px 10px 10px 0px;
+    background: #d8d8d8;
+  }
+
+  .user .username {
+    background: #5A5A5A;
+    color: white;
+    border-radius: 10px 0px 0px 10px;
+    padding: 5px;
+  }
+
+  .user {
+  font-weight: bold;
+  text-align: center;
+  }
+</style>
 <table>
   <thead><tr>
     <th>Username</th>
-    <th>Boyscoutting points</th>
+    <th>Boyscoutting</th>
   </tr></thead>
   <tbody>
     <% @users.each do |user, points| %>
-    <tr>
-      <td><%= user %></td>
-      <td><%= points %></td>
+    <tr class="user">
+      <td class="username"><%= user %></td>
+      <td class="points"><%= points %></td>
     </tr>
     <% end %>
   </tbody>
