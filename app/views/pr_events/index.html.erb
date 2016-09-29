@@ -1,1 +1,14 @@
-hi hi
+<table>
+  <thead><tr>
+    <th>Username</th>
+    <th>Boyscoutting points</th>
+  </tr></thead>
+  <tbody>
+    <% @users.each do |user, points| %>
+    <tr>
+      <td><%= user %></td>
+      <td><%= points %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

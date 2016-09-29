@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  match '/pr-event', to: 'pr_events#create', via: [:get, :post]
+  post '/pr-event', to: 'pr_events#create'
+  get '/leaderboard', to: 'pr_events#index'
 end

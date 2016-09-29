@@ -16,10 +16,16 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module TeamMadetechCom
+module Boyscoutting
   class Application < Rails::Application
     config.api_only = true
+
+    Dir.glob(File.join(File.dirname(__FILE__), '../{app,lib}/**/*_decorator*.rb')) do |c|
+      Rails.configuration.cache_classes ? require(c) : load(c)
+    end
+
     config.autoload_paths << Rails.root.join('lib')
     config.eager_load_paths << Rails.root.join('lib')
+
   end
 end

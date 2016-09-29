@@ -6,6 +6,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rack-cors'
 gem 'imgkit'
 gem 'rack-proxy'
+gem 'imgkit'
+gem 'wkhtmltoimage-binary'
 
 group :development do
   gem 'listen', '~> 3.0.5'
